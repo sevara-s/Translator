@@ -103,3 +103,32 @@ option {
 .switch:hover {
   background-color: #acf0cc;
 }
+@media (max-width: 1350px) {
+  .translator > .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  #text1,
+  #text2 {
+    height: 100px;
+  }
+  .middle {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+@media (max-width: 510px) {
+  #sel1,
+  #sel2 {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #38a169;
+    background: none;
+    color: white;
+    width: 300px;
+  }
+}

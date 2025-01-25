@@ -101,4 +101,5 @@ translateBtn.addEventListener("click", async () => {
   } catch (error) {
     text2.value = `Error translating`;
   }
+  text2.value = "";
 });
