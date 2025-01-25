@@ -68,38 +68,18 @@ switchLang.addEventListener("click", () => {
   [text1.value, text2.value] = [text2.value, text1.value];
   [lang1.value, lang2.value] = [lang2.value, lang1.value];
 });
+let encodedText = encodeURIComponent(text1.value.trim());
 
 // translate language
 
-translateBtn.addEventListener("click", async () => {
-  if (!text1.value.trim()) {
-    text2.value = "Enter text to translate";
-    text2.style.color = "red";
-    return;
-  }
-  text2.value = "";
-
-  try {
-    let encodedText = encodeURIComponent(text1.value.trim());
-    let apiURL = `https://lingva.ml/api/v1/${lang1.value}/${lang2.value}/${encodedText}`;
-
-    const response = await fetch(apiURL);
-
-    if (!response.ok) {
-      throw new Error("Couldn't translate the text");
-    }
-
-    let data = await response.json();
-
-    if (data && data.translation) {
-      text2.value = data.translation;
-      text2.style.color = "white";
-    } else {
-      text2.value = "Translation not available.";
-    }
-    text2.value = "";
-  } catch (error) {
-    text2.value = `Error translating`;
-  }
-  text2.value = "";
+translateBtn.addEventListener("click", () => {
+  fetch(`https://lingva.ml/api/v1/${lang1.value}/${lang2.value}/${text1.value}`)
+    .then((response) => response.json())
+    .then((data) => ADDUI(data.translation))
+    .catch((error) => console.error("Error:", error));
 });
+
+function ADDUI(params) {
+  text2.value = params;
+  console.log(params);
+}
