@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Translate</title>
+  </head>
+  <body>
+    <!-- header started -->
+    <div class="header">
+      <div class="container">
+        <img width="100px" src="./imgs/mainlogo.svg" alt="" />
+        <!--right  -->
+        <div class="icons">
+          <div class="icon1">
+            <img src="" alt="" />
+          </div>
+          <div class="icon2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- header ended -->
+
+    <!-- translator -->
+    <div class="translator">
+      <div class="container">
+        <!-- lang1 started -->
+        <div class="lang1">
+          <select id="sel1"></select>
+          <textarea id="text1" placeholder="Enter a text..."></textarea>
+        </div>
+        <!-- lang1 ended -->
+
+        <div class="middle">
+          <!-- translate  -->
+          <div class="translate" id="translate">
+            <img width="50px" src="./imgs/translate (1).png" alt="" />
+          </div>
+          <!-- switch started  -->
+          <div id="switch" class="switch">
+            <h1>⇄</h1>
+          </div>
+          <!-- switch ended -->
+        </div>
+
+        <!-- lang2 started -->
+        <div class="lang2">
+          <select id="sel2"></select>
+          <textarea id="text2" placeholder="translation" readonly></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
